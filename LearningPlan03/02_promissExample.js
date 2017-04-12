@@ -3,6 +3,12 @@ function asyncFun(a, b) {
 
     return new Promise(function (resolve, reject) {
 
+        if (typeof a !== 'number' || typeof b !== 'number') {
+
+            reject(new Error('no number!'));
+
+        }
+
         setTimeout(function () {
 
             resolve(a + b);
@@ -13,7 +19,7 @@ function asyncFun(a, b) {
 
 }
 
-asyncFun(1, 2).then(function (result) {
+asyncFun(1, 'a').then(function (result) {
 
     if (result > 2) {
 
@@ -26,5 +32,9 @@ asyncFun(1, 2).then(function (result) {
     if (result > 4) {
         console.log('ok');
     }
+
+}).catch(function (error) {
+
+    console.log(error);
 
 });
