@@ -1,4 +1,6 @@
 'use strict';
+
+// 遍历数组,获取对象中的每一个元素
 var obj = {'小木箱': '569015640@qq.com', '杨正友': 'yangzy3@asiainfo.com'};
 var obj2 = {'天道酬勤': '569015640@qq.com', '徐绍坤': 'yangzy3@asiainfo.com'};
 
