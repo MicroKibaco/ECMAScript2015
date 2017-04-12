@@ -27,6 +27,10 @@ asyncFun(1, 'a').then(function (result) {
 
     }
 
+}, function (error) {
+
+    console.log('first -', error)
+
 }).then(function (result) {
 
     if (result > 4) {
@@ -35,6 +39,6 @@ asyncFun(1, 'a').then(function (result) {
 
 }).catch(function (error) {
 
-    console.log(error);
+    console.log('second -', error);
 
 });
