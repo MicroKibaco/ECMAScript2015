@@ -34,7 +34,15 @@ function asyncFun(a, b, timer) {
  });*/
 
 var promise = Promise.race(
-    [asyncFun(1, 2, 100), asyncFun(2, 3, 50), asyncFun(3, 4, 10), asyncFun(1, 44, 40)]);
+    [asyncFun('a', 2, 100), asyncFun(2, 3, 50), asyncFun(3, 4, 10), asyncFun(1, 44, 40)]);
+
 promise.then(function (result) {
+
     console.log(result);
+
+}).catch(error => {
+
+    console.log(error);
+
 });
+
