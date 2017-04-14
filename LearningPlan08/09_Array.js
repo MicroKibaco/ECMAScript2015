@@ -23,6 +23,11 @@ let buffer = new ArrayBuffer(12);
 
 let tarr = new Int16Array([12, 3, 5]);
 console.log(tarr.length, tarr.length);
+console.log(tarr.buffer.byteLength);
+
+let tarr2 = new Int8Array(tarr);
+console.log(tarr2.length, tarr2);
+
 
 
 
