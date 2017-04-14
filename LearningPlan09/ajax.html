@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax请求转换为图片二进制</title>
+</head>
+<body>
+<input type="file" id="file"/>
+<img id="myimg"/>
+
+
+<script>
+    let image = document.getElementById('myimg');
+
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = 'arraybuffer';
+    xhr.open('GET', './girl.jpg');
+    xhr.onload = function () {
+
+        let result = xhr.response;
+        console.log(result, result.byteLength);
+
+        let blob = new Blob([result]);
+
+        image.src = window.URL.createObjectURL(blob);
+
+    };
+
+    xhr.send();
+
+</script>
+
+</body>
+</html>
