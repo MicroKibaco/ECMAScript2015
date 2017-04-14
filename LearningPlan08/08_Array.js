@@ -18,10 +18,9 @@ function creatData() {
 
 let buf = creatData(); // image data
 
-let arr1 = new Int8Array(buf);
+let dataview = new DataView(buf);
 
-
-console.log(arr1[0], arr1[1], arr2[1]);
+console.log(dataview.getInt8(0), dataview.getInt8(1), dataview.getUint16(2));
 
 
 
