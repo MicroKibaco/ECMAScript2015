@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="file"/>
+
+<script>
+
+    let fileinput = document.querySelector("#fileinput");
+
+    fileinput.onchange = function () {
+
+        let file = fileinput.file[0];
+        let filereader = new FileReader();
+        filereader.readAsArrayBuffer(file); // 读取器读取文件
+
+        filereader.onload = function () {
+
+            console.log(filereader.result.byteLength);
+
+        }
+
+    };
+
+</script>
+
+</body>
+</html>
