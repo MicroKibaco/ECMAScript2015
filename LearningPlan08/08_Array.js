@@ -20,7 +20,7 @@ let buf = creatData(); // image data
 
 let dataview = new DataView(buf);
 
-console.log(dataview.getInt8(0), dataview.getInt8(1), dataview.getUint16(2));
+console.log(dataview.getInt8(0), dataview.getInt8(1), dataview.getUint16(2, true));
 
 
 
