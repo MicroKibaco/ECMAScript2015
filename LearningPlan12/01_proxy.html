@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webapi请求二进制文件</title>
+</head>
+<body>
+
+
+<script>
+
+    var obj = {name: 'MicroKibaco', group: 'JavaScript', _type: 'student'};
+
+    var proxy = new Proxy(obj, {
+
+            get: function (target, key) {
+
+                if (key[0] !== '_') {
+
+                    return target[key];
+
+                }
+
+            },
+
+            set: function (target, key, vaule) {
+
+                if (key[0] !== '_') {
+
+                    // Reflect.set(target, key, vaule);
+                    target[key] = vaule;
+
+                }
+
+            },
+
+            deleteProperty: function (target, key) {
+
+                if (key[0] !== '_') {
+
+                    delete  target[key];
+                    //   Reflect.deleteProperty(target, key);
+
+                }
+
+            },
+
+        })
+    ;
+
+    /*    // obj.name = '小木箱';
+     proxy.name = '杨正友';
+
+     delete proxy.group;
+
+     console.log(obj.group);*/
+
+    console.log(proxy._type, obj._type);
+
+    delete proxy._type;
+
+    console.log(obj._type);
+
+
+</script>
+
+</body>
+</html>
