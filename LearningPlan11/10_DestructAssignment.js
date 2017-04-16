@@ -5,12 +5,17 @@
 
 'use strict';
 
-// [x,[y,z]] x1 y2 z3
+function arrTest([x, y] = [12, 22]) {
 
-function test([x = 1, [y = 2, z = 3] = []] = []) {
-
-    console.log(x, y, z);
+    console.log(x, y);
 
 }
 
-test([, []]);
+function test({x, y} = {x: 12, y: 22}) {
+
+    console.log(x, y);
+
+}
+test();
+
+arrTest([]);
