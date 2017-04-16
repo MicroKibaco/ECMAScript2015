@@ -68,7 +68,7 @@ class User {
         }
 
         // fn(); // 全局的this
-        fnx(); // 全局的this
+        fnx(); // 当前的this
 
     }
 

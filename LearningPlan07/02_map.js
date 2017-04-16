@@ -53,7 +53,7 @@ let me = {
 
 };
 
-map.forEach(function (k, v) {
+map.forEach(function (v, k) {
 
     console.log(this.favorite, k, v);
 

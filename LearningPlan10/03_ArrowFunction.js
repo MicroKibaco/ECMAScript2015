@@ -1,7 +1,7 @@
 'use strict';
 // 箭头函数
 // var fn = n => n * 3;
-// 无法使用argument属性
+// 无法使用arguments属性
 let fn = n => {
 
     console.log(arguments[0]);

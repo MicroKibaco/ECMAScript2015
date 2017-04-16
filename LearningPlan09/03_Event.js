@@ -32,6 +32,8 @@ obj2 = {};
 // exports.obj = obj;
 // exports.obj2 = obj2;
 
+// 收集属性方便在其他的文件中调用
+
 module.exports = {
     obj, obj2
 };

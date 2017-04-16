@@ -13,4 +13,5 @@ let obj = {
 };
 
 console.log(obj[getName]());
+console.log(getName);
 
