@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for-in的使用</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    // 运行在firefox的 浏览器
+
+    // for in 拦截
+    function User() {
+
+        console.log('this is a class!');
+
+    }
+
+    var ClassProxy = new Proxy(User, {
+
+        construct: function (target, args) {
+
+            console.log('this is class proxy handle');
+            return Reflect.construct(target, args);
+
+        }
+
+    });
+
+    new ClassProxy();
+
+
+</script>

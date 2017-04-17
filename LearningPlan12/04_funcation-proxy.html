@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for-in的使用</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    // 运行在firefox的 浏览器
+
+    // for in 拦截
+    function test() {
+
+        console.log('Hello world');
+
+    }
+
+    var proxyFun = new Proxy(test, {
+
+        apply: function (target, context, args) {
+
+            console.log('this is proxy is\ is')
+
+            return Reflect.apply(target, context, args);
+
+        }
+
+    });
+
+    proxyFun();
+
+    proxyFun.apply(null);
+
+    proxyFun.call(null);
+
+</script>
