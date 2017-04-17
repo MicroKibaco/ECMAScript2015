@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for-in的使用</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    // 运行在firefox的 浏览器
+
+    // for in 拦截
+
+    var obj = {
+
+        name: 'MicroKibaco',
+        _name: '小木箱',
+        age: 25,
+        group: 'JavaScript'
+
+    };
+
+    var proxy = new Proxy(obj, {
+
+        enumerate: function (target) {
+
+            return Object.keys(target).filter(function (key) {
+
+                return key[0] !== '_'
+
+            })[Symbol.iterator]();
+
+        }
+
+    });
+
+    for (var key in proxy) {
+
+        console.log(key);
+
+    }
+
+
+</script>

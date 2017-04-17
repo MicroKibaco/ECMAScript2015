@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for-in的使用</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    // 运行在firefox的 浏览器
+
+    // for in / in 拦截
+
+    var obj = {_name: 'MicroKibaco', name: '小木箱'};
+
+    var proxy = new Proxy(obj, {
+
+        has: function (target, key) {
+
+            if (key[0] === '_') {
+
+                return false;
+
+            } else {
+
+                return key in target;
+
+            }
+
+        }
+
+    });
+
+    var bool = 'name' in proxy;
+
+    console.log('has name', bool);
+
+    console.log('has _name', '_name' in proxy);
+
+    if ('name' in obj) {
+
+    }
+
+
+</script>
